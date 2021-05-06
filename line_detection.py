@@ -16,6 +16,14 @@ def line_detection(image, verbose=False):
         plt.title("Horizontal Lines")
         plt.show()
 
+    kernel = (kernel.T)
+    image_lines_y = convolution(image, kernel, False)
+
+    if verbose:
+        plt.imshow(image_lines_y, cmap='gray')
+        plt.title("Vertical Lines")
+        plt.show()
+
     return
 
 if __name__ == '__main__':
