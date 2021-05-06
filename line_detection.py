@@ -44,6 +44,14 @@ def line_detection(image, verbose=False):
         plt.title("135 Degree Lines")
         plt.show()
 
+    # Obtenemos las líneas juntando las imágenes anteriores.
+    image_final = image_lines_x + image_lines_y + image_lines_45_dgrs + image_lines_135_dgrs
+
+    if verbose:
+        plt.imshow(image_final, cmap='gray')
+        plt.title("Line Detection")
+        plt.show()
+
     return
 
 if __name__ == '__main__':
