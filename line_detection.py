@@ -35,6 +35,14 @@ def line_detection(image, verbose=False):
         plt.title("45 Degree Lines")
         plt.show()
 
+    # Líneas 135°
+    kernel = np.fliplr(kernel)
+    image_lines_135_dgrs = convolution(image, kernel, False)
+
+    if verbose:
+        plt.imshow(image_lines_135_dgrs, cmap='gray')
+        plt.title("135 Degree Lines")
+        plt.show()
 
     return
 
