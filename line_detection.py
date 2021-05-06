@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 from convolution import convolution
 
 def line_detection(image, verbose=False):
+    # Líneas Horizontales
     # Definimos el filtro para la detección de líneas horizontal
     kernel = np.array([[-1, -1, -1], [2, 2, 2], [-1, -1, -1]])
-
+    
     # Realizamos la convolución con la imagen y el kernel anterior
     image_lines_x = convolution(image, kernel, False)
 
@@ -16,6 +17,7 @@ def line_detection(image, verbose=False):
         plt.title("Horizontal Lines")
         plt.show()
 
+    # Líneas verticales
     kernel = (kernel.T)
     image_lines_y = convolution(image, kernel, False)
 
@@ -23,6 +25,16 @@ def line_detection(image, verbose=False):
         plt.imshow(image_lines_y, cmap='gray')
         plt.title("Vertical Lines")
         plt.show()
+
+    # Líneas a 45°
+    kernel = np.array([[-1, -1, 2], [-1, 2, -1], [2, -1, -1]])
+    image_lines_45_dgrs = convolution(image, kernel, False)
+
+    if verbose:
+        plt.imshow(image_lines_45_dgrs, cmap='gray')
+        plt.title("45 Degree Lines")
+        plt.show()
+
 
     return
 
