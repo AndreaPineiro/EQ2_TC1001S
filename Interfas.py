@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import scrolledtext as st
-
+from gaussian_kernel import gaussian_blur
+from convolution import convolution
+import cv2
 
 class Procesar_imagen:
 
@@ -60,5 +62,13 @@ class Output:
 
 
 #text = "sdadsadsdasddasdda"
-#image = Output(text)ddd
-image_name = Procesar_imagen()
+# image = Output(text)ddd
+# image_name = Procesar_imagen()
+image_name = 'turquia.jpg'
+img = cv2.imread(image_name)
+
+# Hacer kernel gausiano
+kernel_gauss = gaussian_blur(9)
+
+# Hacer convolusion
+img = convolution(img, kernel_gauss, True)

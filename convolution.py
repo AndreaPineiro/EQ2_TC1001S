@@ -50,7 +50,7 @@ def convolution(image, kernel, verbose=False):
     # Se realiza el plot de la Imagen usando el Kernel
     if verbose:
         plt.imshow(res, cmap='gray')
-        plt.title("Output Image using {}X{} Kernel".format(kernel_row, kernel_col))
+        plt.title("Blur Image using {}X{} Gaussian Kernel".format(kernel_row, kernel_col))
         plt.show()
 
     return res

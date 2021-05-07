@@ -1,6 +1,7 @@
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
+import convolution
 
 def gaussian_function (x, sigma): 
 	return 1 / (np.sqrt(2 * np.pi) * sigma) * np.e ** (-(np.power((x/sigma), 2) / 2))
@@ -26,8 +27,5 @@ def gaussian_kernel(size, sigma=1, verbose=False):
     return g_kernel_2d
 
 def gaussian_blur(kernel_size, sigma=1, verbose=False):
-    kernel = gaussian_kernel(kernel_size, sigma=np.sqrt(kernel_size), verbose=True);
-    return kernel
-
-kernel_size = int(input('Ingrese el tamaño del kernel: '));
-gaussian_blur(kernel_size)
+    return gaussian_kernel(kernel_size, sigma=np.sqrt(kernel_size), verbose=False);
+    
