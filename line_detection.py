@@ -55,14 +55,14 @@ def line_detection(image, verbose=False):
     # Obtenemos las líneas juntando las imágenes anteriores.
     print('\n')
     print("LINE DETECTION")
-    image_final = image_lines_x + image_lines_y + image_lines_45_dgrs + image_lines_135_dgrs
+    image = image_lines_x + image_lines_y + image_lines_45_dgrs + image_lines_135_dgrs
 
     if verbose:
-        plt.imshow(image_final, cmap='gray')
+        plt.imshow(image, cmap='gray')
         plt.title("Line Detection")
         plt.show()
 
-    return
+    return image
 
 if __name__ == '__main__':
     image = cv2.imread("turquia.jpg")
