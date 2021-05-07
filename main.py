@@ -6,6 +6,7 @@ from tkinter import messagebox as mb
 from gaussian_kernel import gaussian_blur
 from convolution import convolution
 from line_detection import line_detection
+from laplacian import laplacian
 
 
 class Procesar_imagen:
@@ -79,3 +80,6 @@ if __name__ == "__main__":
     # Aplicar Line Detection
     img = line_detection(img, verbose=True)
     output = Output("Line Detection\n" + "Shape:" + str(img.shape[0]) + " X " + str(img.shape[1]))
+    # Aplicar laplacian 
+    img = laplacian(img, verbose=True)
+    output = Output("Laplacian\n" + "Shape:" + str(img.shape[0]) + " X " + str(img.shape[1]))
