@@ -60,5 +60,5 @@ class Output:
 
 
 #text = "sdadsadsdasddasdda"
-#image = Output(text)
-ops = Procesar_imagen()
+#image = Output(text)ddd
+image_name = Procesar_imagen()
