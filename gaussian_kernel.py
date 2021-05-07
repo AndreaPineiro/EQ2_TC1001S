@@ -18,5 +18,16 @@ def gaussian_kernel(size, sigma=1, verbose=False):
     g_kernel_2d = g_kernel_2d * 1 / g_kernel_2d.max()
     print(g_kernel_2d)
 
+    if verbose == True: 
+        plt.imshow(g_kernel_2d)
+        plt.title('Kernel de ( {}X{} )'.format(size, size))
+        plt.show()
+    
+    return g_kernel_2d
+
+def gaussian_blur(kernel_size, sigma=1, verbose=False):
+    kernel = gaussian_kernel(kernel_size, sigma=np.sqrt(kernel_size), verbose=True);
+    return kernel
+
 kernel_size = int(input('Ingrese el tamaño del kernel: '));
-gaussian_kernel(kernel_size, sigma=np.sqrt(kernel_size), verbose=False);
+gaussian_blur(kernel_size)
