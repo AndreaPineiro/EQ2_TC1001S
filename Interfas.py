@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import scrolledtext as st
 from gaussian_kernel import gaussian_blur
 from convolution import convolution
+from line_detection import line_detection
 import cv2
 
 class Procesar_imagen:
@@ -72,3 +73,6 @@ kernel_gauss = gaussian_blur(9)
 
 # Hacer convolusion
 img = convolution(img, kernel_gauss, True)
+
+# Aplicar Line Detection
+img = line_detection(img, verbose=True)

@@ -11,14 +11,11 @@ def gaussian_kernel(size, sigma=1, verbose=False):
     
     for i in range(size):
         g_kernel_1d[i] = gaussian_function(g_kernel_1d[i], sigma)
-    print(g_kernel_1d)
-
+    
     g_kernel_2d = np.outer(g_kernel_1d.T, g_kernel_1d.T)
-    print(g_kernel_2d)
-
+    
     g_kernel_2d = g_kernel_2d * 1 / g_kernel_2d.max()
-    print(g_kernel_2d)
-
+    
     if verbose == True: 
         plt.imshow(g_kernel_2d)
         plt.title('Kernel de ( {}X{} )'.format(size, size))
