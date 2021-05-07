@@ -1,10 +1,11 @@
 import tkinter as tk
+from tkinter import scrolledtext as st
 
 
 class Procesar_imagen:
 
     # Constructor
-    def __init__(self):
+    def _init_(self):
         # 1. Definicion y creacion del objeto frame (Tk) (JFrame)
         self.frame = tk.Tk()
         self.frame.title(":)")
@@ -15,8 +16,6 @@ class Procesar_imagen:
         self.tf_image = tk.Entry(self.frame, width=20)
         self.bCapturar = tk.Button(self.frame, text="Capturar Datos",
                                 command=self.ca_image)
-
-        self.taDatos = tk.Text(self.frame, width=40, height=10)
 
         # 3. Colocar los objetos de los atributos en un Layout
         self.ib_imagen.grid(row=0, column=0)
@@ -36,4 +35,30 @@ class Procesar_imagen:
         print(datos)
 
 
-image = Procesar_imagen()
+class Output:
+
+    # Constructor
+    def _init_(self, text):
+        # 1. Definicion y creacion del objeto frame (Tk)
+        self.frame = tk.Tk()
+        self.frame.title("Output")
+        self.frame.geometry("600x400")
+        self.text = text
+        # 2. Colocar la salida de texto
+        self.scrolledtext1 = st.ScrolledText(self.frame, width=80, height=20)
+        self.scrolledtext1.grid(column=0, row=0, padx=10, pady=10)
+
+        tex_me = self.output(self.text)
+        # Hacer visible al frame
+        self.frame.mainloop()
+
+    # Metodos para imprimir los tatos
+    def output(self, text):
+        self.scrolledtext1.insert("1.0", text)
+        print (text)
+        return 0
+
+
+#text = "sdadsadsdasddasdda"
+#image = Output(text)
+ops = Procesar_imagen()
