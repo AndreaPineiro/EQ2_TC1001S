@@ -16,6 +16,5 @@ def laplacian(image, verbose=False):
 
     return image
 
-image = cv2.imread("turquia.jpg")
-laplacian(image, True)
+
 
