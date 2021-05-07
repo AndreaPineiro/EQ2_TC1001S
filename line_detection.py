@@ -5,6 +5,8 @@ from convolution import convolution
 
 def line_detection(image, verbose=False):
     # Líneas Horizontales
+    print('\n')
+    print("LÍNEAS HORIZONTALES")
     # Definimos el filtro para la detección de líneas horizontal
     kernel = np.array([[-1, -1, -1], [2, 2, 2], [-1, -1, -1]])
     
@@ -18,6 +20,8 @@ def line_detection(image, verbose=False):
         plt.show()
 
     # Líneas verticales
+    print('\n')
+    print("LÍNEAS VERTICALES")
     kernel = (kernel.T)
     image_lines_y = convolution(image, kernel, False)
 
@@ -27,6 +31,8 @@ def line_detection(image, verbose=False):
         plt.show()
 
     # Líneas a 45°
+    print('\n')
+    print("LÍNEAS 45°")
     kernel = np.array([[-1, -1, 2], [-1, 2, -1], [2, -1, -1]])
     image_lines_45_dgrs = convolution(image, kernel, False)
 
@@ -36,6 +42,8 @@ def line_detection(image, verbose=False):
         plt.show()
 
     # Líneas 135°
+    print('\n')
+    print("LÍNEAS 135°")
     kernel = np.fliplr(kernel)
     image_lines_135_dgrs = convolution(image, kernel, False)
 
@@ -45,6 +53,8 @@ def line_detection(image, verbose=False):
         plt.show()
 
     # Obtenemos las líneas juntando las imágenes anteriores.
+    print('\n')
+    print("LINE DETECTION")
     image_final = image_lines_x + image_lines_y + image_lines_45_dgrs + image_lines_135_dgrs
 
     if verbose:
